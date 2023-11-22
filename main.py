@@ -35,7 +35,9 @@ st.write(filtered_cars)
 
 # Header part 2
 st.header('Heatmap', divider='rainbow')
-
 viz_correlation = sns.heatmap(filtered_cars.select_dtypes(include=['int', 'float']).corr(), center=0, cmap=sns.color_palette("vlag", as_cmap=True))
 st.pyplot(viz_correlation.figure)
 
+# Header part 3
+st.header('Scatterplot', divider='rainbow')
+st.scatter_chart(filtered_cars, x='cubicinches', y='weightlbs')
